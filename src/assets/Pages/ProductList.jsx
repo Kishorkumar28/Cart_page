@@ -1,0 +1,71 @@
+import React, { useContext, useState, useEffect } from 'react';
+import { ProductContext } from '../../contexts/ProductContext';
+
+const ProductList = () => {
+  const { products } = useContext(ProductContext);
+  const [quantities, setQuantities] = useState({}); // State to track quantities
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    // Calculate total price when products or their quantities change
+    const calculateTotalPrice = () => {
+      const totalPrice = Object.keys(quantities).reduce(
+        (acc, productId) => {
+          const product = products.find(p => p.id === parseInt(productId));
+          return acc + (product ? product.price * quantities[productId] : 0);
+        },
+        0
+      );
+      setTotalPrice(totalPrice);
+    };
+
+    calculateTotalPrice();
+  }, [products, quantities]);
+
+  const handleQuantityChange = (productId, quantity) => {
+    setQuantities(prevQuantities => ({
+      ...prevQuantities,
+      [productId]: quantity,
+    }));
+  };
+
+  return (
+    <div className="products">
+      <h1>Product List</h1>
+      <ul className="product-list" style={{ listStyleType: 'none' }}>
+        {products.map(product => (
+          <li key={product.id} className="product-item">
+            <img className='images' src={product.thumbnail} alt={product.title} />
+            <h3>{product.title}</h3>
+            <p>Description: {product.description}</p>
+            
+            <p>Rating: {product.rating}</p>
+            <p>Stock: {product.stock}</p>
+            <p>Brand: {product.brand}</p>
+            <p>Category: {product.category}</p>
+            <p>Discount: {product.discountPercentage}%</p>
+            <div className='order'>
+
+            <h3 className="prices">Price: ${product.price}</h3>
+            <select
+              value={quantities[product.id] || 0}
+              onChange={e => handleQuantityChange(product.id, parseInt(e.target.value))}
+            >
+              {/* Generate options based on stock */}
+              {Array.from({ length: Math.min(product.stock, 5) + 1 }, (_, index) => index).map(quantity => (
+                <option key={quantity} value={quantity}>
+                  {quantity}
+                </option>
+              ))}
+            </select>
+            </div>
+            {/* Button to add to cart or perform other actions */}
+          </li>
+        ))}
+      </ul>
+      <div className='price' >Total Price: ${totalPrice}</div>
+    </div>
+  );
+};
+
+export default ProductList;
