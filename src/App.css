@@ -71,7 +71,7 @@ select{
 }
 
 .product-item {
-  margin-top: 10vh;
+  margin-top: 6vh;
   border-bottom: 5px solid #ccc; /* Add a 1px solid border at the bottom of each product item */
   padding-bottom: 10px; /* Optional: Add some padding at the bottom of each product item */
   margin-bottom: 20px; /* Optional: Add margin at the bottom of each product item */
