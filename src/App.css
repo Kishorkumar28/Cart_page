@@ -7,6 +7,15 @@
   font-family:Arial, Helvetica, sans-serif;
 
 }
+.product-list{
+ display:flex;
+ align-items: center;
+ justify-content: center;
+  background-color: grey;
+  height:20vh;
+  padding:4vh;
+  width:100%;
+}
 
 .products{
   height:100% !important;

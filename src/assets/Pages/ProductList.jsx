@@ -31,8 +31,8 @@ const ProductList = () => {
 
   return (
     <div className="products">
-      <h1>Product List</h1>
-      <ul className="product-list" style={{ listStyleType: 'none' }}>
+      <h1 className="product-list">Product List</h1>
+      <ul className="" style={{ listStyleType: 'none' }}>
         {products.map(product => (
           <li key={product.id} className="product-item">
             <div className='details'>
