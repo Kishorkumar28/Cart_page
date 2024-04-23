@@ -35,6 +35,7 @@ const ProductList = () => {
       <ul className="product-list" style={{ listStyleType: 'none' }}>
         {products.map(product => (
           <li key={product.id} className="product-item">
+            <div className='details'>
             <img className='images' src={product.thumbnail} alt={product.title} />
             <h3>{product.title}</h3>
             <p>Description: {product.description}</p>
@@ -44,6 +45,7 @@ const ProductList = () => {
             <p>Brand: {product.brand}</p>
             <p>Category: {product.category}</p>
             <p>Discount: {product.discountPercentage}%</p>
+            </div>
             <div className='order'>
 
             <h3 className="prices">Price: ${product.price}</h3>
