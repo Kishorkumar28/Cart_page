@@ -69,3 +69,7 @@ select{
   padding-bottom: 10px; /* Optional: Add some padding at the bottom of each product item */
   margin-bottom: 20px; /* Optional: Add margin at the bottom of each product item */
 }
+h1{
+  font-size: 3.2em;
+  line-height: 1.1;
+}
