@@ -30,8 +30,9 @@ const ProductList = () => {
   };
 
   return (
+    
     <div className="products">
-      <h1 className="product-list">Product List</h1>
+      <h1 className="product-list">Cart</h1>
       <ul className="" style={{ listStyleType: 'none' }}>
         {products.map(product => (
           <li key={product.id} className="product-item">
@@ -65,7 +66,11 @@ const ProductList = () => {
           </li>
         ))}
       </ul>
-      <div className='price' >Total Price: ${totalPrice}</div>
+      <div className="summary">
+          <div><h2>Shipping : Free</h2></div>
+          <div className='price' >Total Price: ${totalPrice}</div>
+      </div>
+      
     </div>
   );
 };
