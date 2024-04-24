@@ -5,7 +5,7 @@
   justify-content: center;
   color:rgb(0, 0, 0);
   font-family:Arial, Helvetica, sans-serif;
-  border-bottom: 5px solid #ccc;
+  border-bottom: 5px solid #000000;
   width:100%;
   
 
@@ -72,7 +72,7 @@ select{
 
 .product-item {
   margin-top: 6vh;
-  border-bottom: 5px solid #ccc; /* Add a 1px solid border at the bottom of each product item */
+  border-bottom: 5px solid #000000; /* Add a 1px solid border at the bottom of each product item */
   padding-bottom: 10px; /* Optional: Add some padding at the bottom of each product item */
   margin-bottom: 20px; /* Optional: Add margin at the bottom of each product item */
   display:flex;
