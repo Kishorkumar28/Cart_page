@@ -41,11 +41,11 @@ const ProductList = () => {
             <h3>{product.title}</h3>
             <p>Description: {product.description}</p>
             
-            <p>Rating: {product.rating}</p>
+            {/* <p>Rating: {product.rating}</p>
             <p>Stock: {product.stock}</p>
             <p>Brand: {product.brand}</p>
             <p>Category: {product.category}</p>
-            <p>Discount: {product.discountPercentage}%</p>
+            <p>Discount: {product.discountPercentage}%</p> */}
             </div>
             <div className='order'>
 
